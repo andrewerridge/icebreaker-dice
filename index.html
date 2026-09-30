@@ -103,48 +103,79 @@ button:focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; }
 (() => {
 // ---------- Question grammar ----------
 const CORE = [
-  "your favourite","your least favourite","the most overrated","the most underrated","your go-to",
-  "your all-time favourite","your second favourite","your ideal","the best","the worst"
+  "your favourite","your least favourite","the most overrated","the most underrated","your go-to","your all-time favourite",
+  "your second favourite","your ideal","the best","the worst","your perfect","the most annoying"
 ];
 const SPICY = [
-  "your guilty-pleasure","your comfort","your controversial","your desert-island","your nemesis",
-  "your childhood","your hot-take","your secret favourite","your emergency","your 3am",
-  "your hill-to-die-on","your ride-or-die","your spirit","your Friday-afternoon","your post-pub",
-  "your lottery-win","your mum's favourite","your deathbed"
+  "your guilty-pleasure","your comfort","your controversial","your desert-island","your nemesis","your childhood",
+  "your hot-take","your secret favourite","your emergency","your 3am","your hill-to-die-on","your ride-or-die",
+  "your spirit","your Friday-afternoon","your post-pub","your lottery-win","your mum's favourite","your deathbed",
+  "your rainy-day","your Christmas-Day","your birthday","your karaoke","your pub-quiz","your first-ever",
+  "your most-regretted","your holiday","your Monday-morning","your sick-day"
 ];
 const qualifier = () => pick(Math.random() < 0.75 ? CORE : SPICY);
 const THINGS = [
-  "Coldplay song","cuisine","biscuit","font","motorway service station","Monopoly property","cheese",
-  "sandwich filling","emoji","Pixar film","crisp flavour","bird","day of the week","type of weather",
-  "kitchen utensil","spreadsheet function","planet","board game","shade of beige","meeting room","sauce",
-  "cereal","soup","Greek letter","unit of measurement","household appliance","garden tool","mode of transport",
-  "cloud formation","pasta shape","tree","farmyard animal","dog breed","fruit","vegetable","condiment",
+  "Coldplay song","cuisine","biscuit","font","motorway service station","Monopoly property",
+  "cheese","sandwich filling","emoji","Pixar film","crisp flavour","bird",
+  "day of the week","type of weather","kitchen utensil","spreadsheet function","planet","board game",
+  "shade of beige","meeting room","sauce","cereal","soup","Greek letter",
+  "unit of measurement","household appliance","garden tool","mode of transport","cloud formation","pasta shape",
+  "tree","farmyard animal","dog breed","fruit","vegetable","condiment",
   "chocolate bar","ABBA song","Christmas film","keyboard shortcut","email sign-off","stationery item",
-  "airport","roundabout","sea creature","dinosaur","pizza topping","gemstone","smell","pub name",
-  "Olympic sport","yoga pose","dance move","knot","element on the periodic table","cocktail","hot drink",
-  "cake","pudding","houseplant","spice","bread","potato dish","animal","90s ringtone","printer error"
+  "airport","roundabout","sea creature","dinosaur","pizza topping","gemstone",
+  "smell","pub name","Olympic sport","yoga pose","dance move","knot",
+  "element on the periodic table","cocktail","hot drink","cake","pudding","houseplant",
+  "spice","bread","potato dish","animal","90s ringtone","printer error",
+  "Beatles song","Queen song","Spice Girls song","Bond theme","musical","nursery rhyme",
+  "sitcom","soap opera","quiz show","game show catchphrase","Disney film","Christmas song",
+  "karaoke song","wedding first dance","national anthem","boy band","TV theme tune","dessert",
+  "sweet","breakfast cereal","ice cream flavour","jam","tea","fish",
+  "cut of meat","sandwich","curry","takeaway","Sunday roast trimming","pie",
+  "herb","cheese on toast topping","flavour of Walkers","chocolate in the tin","supermarket","high street shop",
+  "motorway","train station","London Underground line","British seaside town","county","castle",
+  "bridge","river","mountain","island","ocean","country",
+  "capital city","continent","month","season","bank holiday","Olympic event",
+  "football ground","racecourse","sport","card game","playground game","Lego set",
+  "toy","Mr Men character","Pokémon","constellation","colour","typeface",
+  "emoji reaction","app","website","ringtone","car","bicycle",
+  "boat","aeroplane","vehicle","piece of furniture","room in the house","pair of shoes",
+  "hat","jumper","umbrella","insect","reptile","big cat",
+  "monkey","horse breed","cat breed","wild animal","endangered species","flower",
+  "weed","vegetable to grow","mushroom","bin day","Excel error","Teams status",
+  "PowerPoint transition","office chair","mug","biro","Post-it colour","out-of-office reply",
+  "corporate buzzword","meeting excuse","snack drawer item","lunch deal"
 ];
 const PLURALS = [
   "crisps","Beatles albums","dinosaurs","root vegetables","Olympic sports","conspiracy theories",
-  "types of pasta","Bond films","houseplants","Christmas songs","reply-all emails","biscuits","clouds",
-  "ducks","roundabouts","cheeses","knots","spices","Pixar films","socks","hats","trains","spreadsheets",
-  "meetings","out-of-office replies","emojis","board games","podcasts","hairstyles","garden centres",
-  "ringtones","puddings","insects","mountains","fonts","sandwiches"
+  "types of pasta","Bond films","houseplants","Christmas songs","reply-all emails","biscuits",
+  "clouds","ducks","roundabouts","cheeses","knots","spices",
+  "Pixar films","socks","hats","trains","spreadsheets","meetings",
+  "out-of-office replies","emojis","board games","podcasts","hairstyles","garden centres",
+  "ringtones","puddings","insects","mountains","fonts","sandwiches",
+  "shoes","sweets","chocolates","nuts","berries","cereals",
+  "soups","sauces","curries","pies","cakes","Mr Men",
+  "Lego sets","card games","birds","fish","trees","flowers",
+  "musicals","sitcoms","game shows","Disney films","corporate buzzwords","meeting rooms",
+  "Teams backgrounds","motorway services","seaside towns","castles","bridges","rivers"
 ];
 const PEOPLE = [
   "Bond villain","Muppet","Bake Off contestant","Roman emperor","Doctor Who companion","Spice Girl",
-  "Blue Peter presenter","Tudor","TV chef","Beatle","Teletubby","Greek god","footballer","weather presenter",
-  "pirate","Viking","Wimbledon champion","astronaut","sitcom dad","pantomime dame","Egyptian pharaoh",
-  "Apprentice candidate","Thunderbird","newsreader","Gladiator","Traitor","snooker player","famous Dave"
+  "Blue Peter presenter","Tudor","TV chef","Beatle","Teletubby","Greek god",
+  "footballer","weather presenter","pirate","Viking","Wimbledon champion","astronaut",
+  "sitcom dad","pantomime dame","Egyptian pharaoh","Apprentice candidate","Thunderbird","newsreader",
+  "Gladiator","Traitor","snooker player","famous Dave","Bond actor","Disney villain",
+  "Disney princess","Muppet Show guest","quiz show host","darts player","Olympian","explorer",
+  "inventor","scientist","painter","composer","poet","king",
+  "queen","wizard","superhero","cartoon dog","cartoon cat","Womble",
+  "Mr Man","Little Miss","Roman god","Norse god","saint","ghost",
+  "detective","sitcom neighbour"
 ];
 const ENDINGS = [
-  "what would you be","what would your catchphrase be","what would your theme tune be",
-  "who would play you in the film","what would your fatal flaw be","where would you go on holiday",
-  "what would your superpower be","what would you have for breakfast","what would your LinkedIn headline be",
-  "how would you take your tea","what would your autobiography be called","what would your out-of-office say",
-  "what would your walk-on music be","what would your star sign be","what would you be scared of",
-  "what would your Wi-Fi password be","who would your nemesis be","what would you bring to the office party",
-  "what would your last words be","what would your email sign-off be"
+  "what would you be","what would your catchphrase be","what would your theme tune be","who would play you in the film","what would your fatal flaw be","where would you go on holiday",
+  "what would your superpower be","what would you have for breakfast","what would your LinkedIn headline be","how would you take your tea","what would your autobiography be called","what would your out-of-office say",
+  "what would your walk-on music be","what would your star sign be","what would you be scared of","what would your Wi-Fi password be","who would your nemesis be","what would you bring to the office party",
+  "what would your last words be","what would your email sign-off be","what would your karaoke song be","what would your Mastermind specialist subject be","what would your Teams status say","what would your motto be",
+  "what would you order at the pub","what would your middle name be","what would your hidden talent be","what would you do on a Sunday","what would your pet hate be","what would you be famous for"
 ];
 const AN_EXCEPTIONS = { "unit of measurement": "a" };
 const article = n => AN_EXCEPTIONS[n] || (/^[aeiou]/i.test(n) ? "an" : "a");
